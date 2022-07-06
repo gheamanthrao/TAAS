@@ -1,0 +1,117 @@
+{% extends 'base_a.html' %}
+
+{% block body %}
+</br>
+<style>
+    .btn-primary {
+        background-color: #0099cc;
+        border-color: #0099cc;
+        /* padding: 15px;
+        margin: 50px 10px;
+        font-size: 20px; */
+        text-align: center;
+        display: inline-block;
+        width: auto;
+    }
+
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        margin: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Remove extra left and right margins, due to padding in columns */
+    .row {
+        margin: 0 -5px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .card-body {
+        margin: auto;
+    }
+</style>
+<div class="row">
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/list_cars.jpg')}}" class="card-img-top" alt="List Cars"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/carlist" class="btn btn-primary">List Cars</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/list_customers.jpg')}}" class="card-img-top"
+                alt="List Customers" width=200px height=200px>
+            <div class="card-body">
+                <a href="/customerlist" class="btn btn-primary">List Customers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/statistics.jpg')}}" class="card-img-top" alt="Statistics"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/stats" class="btn btn-primary">Statistics</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/car_logo.jpg')}}" class="card-img-top" alt="Add Car"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/addC" class="btn btn-primary">Add Car</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/repair_car.jpg')}}" class="card-img-top" alt="Repair Car"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/repair_snd" class="btn btn-primary">Send Car to repair</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/get_repair.png')}}" class="card-img-top" alt="Repair Car"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/repair_get" class="btn btn-primary">Get Car from repair</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='images/remove.jpg')}}" class="card-img-top" alt="Remove Car"
+                width=200px height=200px>
+            <div class="card-body">
+                <a href="/delete" class="btn btn-primary">Remove Car</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

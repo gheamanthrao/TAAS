@@ -1,0 +1,41 @@
+{% extends 'base_c.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-size: 50px; color:rgb(69, 214, 224)">My Journeys</h1>
+        </div>
+    </div>
+</br></br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Journey ID</th>
+                        <th>Car Model</th>
+                        <th>Car Id</th>
+                        <th>Booked On</th>
+                        <th>Returned On</th>
+                        <th>Fare</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for j in jrny %}
+                    <tr>
+                        <td>{{ j.id }}</td>
+                        <td>{{ j.cmodel }}</td>
+                        <td>{{ j.car }}</td>
+                        <td>{{ j.bdate }}</td>
+                        <td>{{ j.rdate }}</td>
+                        <td>{{ j.fare }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

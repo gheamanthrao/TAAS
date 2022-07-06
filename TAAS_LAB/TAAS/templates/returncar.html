@@ -1,0 +1,24 @@
+{% extends 'base_c.html' %}
+
+{% block body %}
+<div class="modal" style="display: block;">
+
+    <form class="modal-content animate" action="/return/{{customer.id}}" method="POST">
+        <div class="imgcontainer">
+            <img src="{{ url_for('static', filename='images/list_cars.jpg') }}" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="kms"><b>Kms Driven</b></label>
+            <input type="int" placeholder="Kms driven" name="kms" required class="inputs">
+
+            <label for="feedback"><b>Rating</b></label>
+            <input type="range" min="0" max="5" placeholder="Rate out of 5" name="rating" required class="inputs">           
+
+            <label for="feedback"><b>Feedback</b></label>
+            <input type="text" class="inputs">
+            <button type="submit" placeholder="" class="submit">Return Car</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

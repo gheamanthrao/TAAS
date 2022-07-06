@@ -1,0 +1,40 @@
+{% extends 'base_c.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-size: 50px; color:rgb(69, 214, 224)">Cars List</h1>
+        </div>
+    </div>
+    </br></br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Model</th>
+                        <th scope="col">Rent/hr</th>
+                        <th scope="col">Rent/km</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Book Now</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for car in models %}
+                    <tr>
+                        <td scope="row">{{ car.mname }}</td>
+                        <td>{{ car.rent_h }}</td>
+                        <td>{{ car.rent_k }}</td>
+                        <td>{{ car.feedback }}</td>
+                        <td>
+                            <a type="button" href="/booking/{{customer.id}}/{{car.mno}}"
+                                class="btn btn-outline-dark btn-sm mx-1">Book</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base_a.html' %}
+
+{% block body %}
+<div class="modal" style="display: block;">
+
+    <form class="modal-content animate" action="/addCar" method="POST">
+        <div class="imgcontainer">
+            <img src="{{ url_for('static', filename='images/list_cars.jpg') }}" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="mname"><i>Model</i></label><br>
+            <input type="text" placeholder="Car Name" name="carname" style="width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;" required class="inputs"><br><br>
+
+            <label for="number">Enter The Number Of Cars</label><br>
+            <input type="number" min="1" name="quantity" required class="inputs"><br><br>
+            <label for="type">AC or NON-AC</label><br>
+            <select type="text" name="dog-names" required class="inputs">
+                <option selected>Select</option>
+                <option>AC</option>
+                <option>NON-AC</option>
+            </select><br><br>
+            <label for="quantity">Cost Per Hour</label><br><br>
+            <input type="number" min="1" id="quantity" name="cost_h" required class="inputs"><br><br>
+            <label for="quantity">Cost Per km</label><br><br>
+            <input type="number" min="1" id="quantity" name="cost_k" required class="inputs"><br><br>
+            <button type="submit" class="submit">Add Car</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

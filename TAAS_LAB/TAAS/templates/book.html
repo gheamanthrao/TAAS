@@ -1,0 +1,66 @@
+{% extends 'base_c.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-size: 50px; color:rgb(69, 214, 224)">Cars List</h1>
+        </div>
+    </div>
+    </br></br>
+    <div id="id01" class="modal" style="display: block;">
+
+        <form class="modal-content" action="/book/{{customer.id}}/{{model.mno}}" method="POST">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="{{ url_for('static', filename='images/bookdetails.jpg') }}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="advance"><b>Advance</b></label>
+                <input type="int" placeholder="Enter the Advance you paid" name="advance" required class="inputs">
+                <br>
+                <label for="return"><b>Return Date</b></label>
+                <input type="datetime-local" placeholder="Enter expected return date" name="return" required class="inputs">
+
+                <label>
+                    <input id="acnac" type="checkbox" checked name="ac" value="checked"> AC
+                </label>
+
+                <button type="submit" class="submit">Book</button>
+
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Model</th>
+                        <th scope="col">Rent/hr</th>
+                        <th scope="col">Rent/km</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Book Now</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for car in models %}
+                    <tr>
+                        <td scope="row">{{ car.mname }}</td>
+                        <td>{{ car.rent_h }}</td>
+                        <td>{{ car.rent_k }}</td>
+                        <td>{{ car.feedback }}</td>
+                        <td>
+                            <a type="button" href="/booking/{{customer.id}}/{{car.mno}}"
+                                class="btn btn-outline-dark btn-sm mx-1">Book</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

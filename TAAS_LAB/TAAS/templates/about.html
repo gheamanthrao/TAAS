@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+</style>
+<div class="about-section">
+    <h1 class="fs-3" style="color: green">About Us</h1>
+    <br>
+    <p style="color: black;">This TAAS Weiste is a data management system aimed at handling all the data of a car rental
+        company. The purpose
+        of the project is to make data handling a very easy and efficient, to help the agency in organising and
+        analysing the data of all cars and customers. The data can be of cars or of customers. It is an alternative to
+        the conventional hard copy management of all the data. The data can be changed, deleted or added anytime, such
+        as a new car can be added to the travel agency, a car can be
+        rented, car can be sent to repair etc. This data can be managed using a software. So, the website ”TAAS” is a
+        way to achieve this. This helps in automation of listing of the cars present to give for renting, calculate the
+        cost for renting, give statistic etc.</p>
+    <br>
+    <h1 class="fs-3" style="color: green">Advantages of TAAS:</h1>
+    <br>
+    <ul>
+        <li>Common place for administrator and customers</li>
+        <li>More control over the processes in agency</li>
+        <li>Ease of use and time-efficient</li>
+        <li>Reduced risks of human errors</li>
+        <li>Easy sales analysis</li>
+        <li>Suggestions for price of rent to increase productivity</li>
+        <li>Quick, easy and secure retrieval of information</li>
+    </ul>
+</div>
+
+<h1 style="text-align:center" class="fs-3">Our Team</h1>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="John" style="width:50%; margin:auto">
+            <div class="container">
+                <h2 style="text-align:center" class="fs-4">Atishay Jain</h2>
+                <p class="title fs-5" style="text-align:center">Designer</p>
+                <p style="text-align:center">Team Member</p>
+                <br>
+                <p><a href="mailto:atishayjain002@gmail.com" target="_blank" class="button">Contact</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="John" style="width:50%; margin:auto">
+            <div class="container">
+                <h2 style="text-align:center" class="fs-4">Suvvari Venkata Sai</h2>
+                <p class="title fs-5" style="text-align:center">Designer</p>
+                <p style="text-align:center">Team Member</p>
+                <br>
+                <p><a href="mailto:atishayjain002@gmail.com" target="_blank" class="button">Contact</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="John" style="width:50%; margin:auto">
+            <div class="container">
+                <h2 style="text-align:center" class="fs-4">Gandham Heamanth Rao</h2>
+                <p class="title fs-5" style="text-align:center">Designer</p>
+                <p style="text-align:center">Team Member</p>
+                <br>
+                <p><a href="mailto:atishayjain002@gmail.com" target="_blank" class="button">Contact</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

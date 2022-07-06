@@ -1,0 +1,43 @@
+{% extends 'base_a.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-size: 50px; color:rgb(69, 214, 224)">Statistics</h1>
+        </div>
+    </div>
+    </br></br>
+    <h2 class="fs-2" style="color: blue;">Revenue : </h2>
+    <h3 class="fs-2">{{admin.rvnu}}</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Model No.</th>
+                        <th>Demand</th>
+                        <th>Revenue</th>
+                        <th>Feedback</th>
+                        <th>Maintainence Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stat in statlist %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ stat.mname }}</td>
+                        <td>{{ stat.demand }}</td>
+                        <td>{{ stat.rvnu }}</td>
+                        <td>{{ stat.feedback }}</td>
+                        <td>{{ stat.mntnc }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
